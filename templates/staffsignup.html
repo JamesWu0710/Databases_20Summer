@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Staff Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/style2.css">
+    <style>
+        .class1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        
+                        <h2 class="form-title">Staff Sign Up</h2>
+                        
+                        <form action="/staffregister" method="POST" class="register-form" id="register-form">
+                            <ul>
+                                <input name="user_type" value = "Airline Staff" class="class1" readonly>
+                                <li><a>username:</a><input name="username" type="text" maxlength="50" required="required"></li>
+                                <li><a>password:</a><input name="password" type="password" maxlength="30" required="required"></li>
+                                <li><a>confirm password:</a><input name="confirm_pwd" type="password" maxlength="30" required="required"></li>
+                                <li><a>first name:</a><input name="first_name" type="text" maxlength="50" required="required"></li>
+                                <li><a>last name:</a><input name="last_name" type="text" maxlength="50" required="required"></li>
+                                <li><a>Date of Birth:</a><input name="date_of_birth" type="date" maxlength="50" required="required"></li>
+                                <li><a>Phone number 1:</a><input name="phone" type="text" maxlength="50" required="required"></li>
+                                <li><a>Phone number 2:</a><input name="phone1" type="text" maxlength="50" ></li>
+                                <li><a>Phone number 3:</a><input name="phone2" type="text" maxlength="50" ></li>
+                                <li><a>Airline Name:</a>
+                                    <select name = "airline_name">
+                                        {% for i in airlines %}
+                                        <option>{{i}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </li>
+                            </ul>
+                            {% if error %}
+                                <p class="error"><strong>Error Message:</strong> {{error}}</p>
+                            {% endif %}
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="static/images/signup-image.png" alt="sing up image"></figure>
+                        <a href="staffsignin" class="signup-image-link">I am already member</a>
+                        <a href="/" class="signup-image-link">Back to Homepage</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

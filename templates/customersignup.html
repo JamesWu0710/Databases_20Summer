@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/style2.css">
+    <style>
+        .class1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+
+                        <h2 class="form-title">Customer Register</h2>
+                        <form action="/customerregister" method="POST" class="register-form" id="register-form">
+
+                            <ul>
+                                <input name="user_type" value = "Customer" class="class1">
+                                <li><a>name:</a><input name="username" type="text" maxlength="50" required="required"></li>
+                                <li><a>email:</a><input name="email" type="email" maxlength="50" required="required"></li>
+                                <li><a>password:</a><input name="password" type="password" maxlength="30" required="required"></li>
+                                <li><a>confirm password:</a><input name="confirm_pwd" type="password" maxlength="30" required="required"></li>
+                                <li><a>state:</a><input name="state" type="text" maxlength="30" required="required"></li>
+                                <li><a>city:</a><input name="city" type="text" maxlength="50" required="required"></li>
+                                <li><a>street:</a><input name="street" type="text" maxlength="50" required="required"></li>
+                                <li><a>building number:</a><input name="building_number" type="text" maxlength="30" required="required"></li>
+                                <li><a>phone number:</a><input name="phone_number" type="number" min = "0" max = "99999999999" required="required"></li>
+                                <li><a>passport No.:</a><input name="passport_number" type="text" maxlength="50" required="required"></li>
+                                <li><a>passport expiration date:</a><input name="passport_expiration" type="date" maxlength="50" required="required" placeholder="yyyy-mm-dd"></li>
+                                <li><a>Issue Country:</a><input name="passport_country" type="text" maxlength="50" required="required"></li>
+                                <li><a>Birth Date:</a><input name="date_of_birth" type="date" maxlength="50" required="required"></li>
+                            </ul>
+                            
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                            </div>
+                        </form>
+                        {% if error %}
+                            <p class="error"><strong>Error:</strong> {{error}}</p>
+                        {% endif %}
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="static/images/signup-image.png" alt="sing up image"></figure>
+                        <a href="customersignin" class="signup-image-link">I am already member</a>
+                        <a href="/" class="signup-image-link">Back to Homepage</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
